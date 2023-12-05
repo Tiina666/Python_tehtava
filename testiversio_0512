@@ -1,0 +1,133 @@
+import json
+import re
+import random
+import string
+
+# Caesar cipher encryption and decryption functions (pre-implemented)
+def caesar_encrypt(text, shift):
+    encrypted_text = ""
+    for char in text:
+        if char.isalpha():
+            shifted = ord(char) + shift
+            if char.islower():
+                if shifted > ord('z'):
+                    shifted -= 26
+            elif char.isupper():
+                if shifted > ord('Z'):
+                    shifted -= 26
+            encrypted_text += chr(shifted)
+        else:
+            encrypted_text += char
+    return encrypted_text
+
+def caesar_decrypt(text, shift):
+    return caesar_encrypt(text, -shift)
+
+# Password strength checker function (optional)
+def is_strong_password(password):
+    # Implement your password strength checking logic
+    # ...
+
+# Password generator function (optional)
+# def generate_password(length):
+    """
+    Generate a random strong password of the specified length.
+
+    Args:
+        length (int): The desired length of the password.
+
+    Returns:
+        str: A random strong password.
+    """
+    # Implement your password generation logic here
+    # ...
+
+# Initialize empty lists to store encrypted passwords, websites, and usernames
+encrypted_passwords = []
+websites = []
+usernames = []
+
+# Function to add a new password
+def add_password():
+    website = input("Enter website: ")
+    username = input("Enter username: ")
+
+    # You may choose to generate a random password or let the user enter one
+    password_choice = input("Do you want to generate a random password? (yes/no): ").lower()
+    
+    if password_choice == "yes":
+        password_length = int(input("Enter the desired password length: "))
+        password = generate_password(password_length)
+    else:
+        password = input("Enter password: ")
+
+    # You may choose to check password strength here using is_strong_password function
+
+    encrypted_password = caesar_encrypt(password, shift=3)
+
+    websites.append(website)
+    usernames.append(username)
+    encrypted_passwords.append(encrypted_password)
+
+    print("Password added successfully!")
+
+# Function to retrieve a password
+def get_password():
+    website_search = input("Enter website to retrieve password: ")
+    
+    if website_search in websites:
+        index = websites.index(website_search)
+        decrypted_password = caesar_decrypt(encrypted_passwords[index], shift=3)
+        print(f"Website: {websites[index]}\nUsername: {usernames[index]}\nPassword: {decrypted_password}")
+    else:
+        print("Website not found.")
+
+# Function to save passwords to a JSON file
+def save_passwords():
+    data = {"websites": websites, "usernames": usernames, "encrypted_passwords": encrypted_passwords}
+
+    with open("vault.json", "w") as file:
+        json.dump(data, file)
+
+    print("Passwords saved successfully!")
+
+# Function to load passwords from a JSON file
+def load_passwords():
+    try:
+        with open("vault.json", "r") as file:
+            data = json.load(file)
+            return data["websites"], data["usernames"], data["encrypted_passwords"]
+    except FileNotFoundError:
+        print("No saved passwords found.")
+        return [], [], []
+
+# Main method
+def main():
+    while True:
+        print("\nPassword Manager Menu:")
+        print("1. Add Password")
+        print("2. Get Password")
+        print("3. Save Passwords")
+        print("4. Load Passwords")
+        print("5. Quit")
+
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+            add_password()
+        elif choice == "2":
+            get_password()
+        elif choice == "3":
+            save_passwords()
+        elif choice == "4":
+            global websites, usernames, encrypted_passwords
+            websites, usernames, encrypted_passwords = load_passwords()
+            print("Passwords loaded successfully!")
+        elif choice == "5":
+            break
+        else:
+            print("Invalid choice. Please try again.")
+
+# Execute the main function when the program is run
+if __name__ == "__main__":
+    main()
