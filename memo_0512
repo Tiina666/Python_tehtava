@@ -3,7 +3,7 @@ Memo 5.12.2023 / Python ryhmätyö (Frans, Heini, Tiina, Nina) Tekstimuodossa t�
 •	Password Manager Menu/1,2,3 ja 4 näyttäisi toimivan Githubiin lisätyllä testiversiolla. 
 
 •	Epäselvyyttä on vahvojen salasanojen sekä kryptauksen osalta, toiminnot ei toimi tai eivät hyväksy mitään salasanaa. // Kommentti NSt – Huom. rivi 26  # Password strength checker function (optional) Ei toimi, koska koodi on puutteellinen, mutta kohta on optional, eli voidaan ehkä jättää kokonaan pois? 
-// Heini saanut toimimaan vielä illalla, koodi muokattu Githubiin 0512 illalla.
+// Heini saanut toimimaan vielä illalla, koodi muokattu Githubin testiversioon 0512 klo 22 jälkeen.
 
 •	Ennen 10.12 palaveria pyritään tutkimaan ja mahdollisesti myös testaamaan toimintoja ja koodien integriteettiä. 
 
