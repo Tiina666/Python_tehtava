@@ -24,7 +24,7 @@ def caesar_decrypt(text, shift):
     return caesar_encrypt(text, -shift)
 
 # Password strength checker function (optional)
-def is_strong_password(password):
+# def is_strong_password(password):
     # Implement your password strength checking logic
     # ...
 
