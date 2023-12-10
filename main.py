@@ -25,19 +25,29 @@ def caesar_decrypt(text, shift):
 
 # Password strength checker function (optional)
 def is_strong_password(password):
-    # ...
+    # Implement password strength check logic here
+    # For example, you can check for minimum length, presence of uppercase, lowercase, digits, and special characters
+    # Return True if the password is strong, False otherwise
+    pass
+    return (
+        len(password) >= 8 and
+        any(char.isupper() for char in password) and
+        any(char.islower() for char in password) and
+        any(char.isdigit() for char in password) and
+        any(char in string.punctuation for char in password)
+    )
 
 # Password generator function (optional)
 def generate_password(length):
-     """
-    Generate a random strong password of the specified length.
+   # Implement password generation logic here
+    # You can use random.choice() to select characters from a pool of characters
+    # Make sure to include a mix of uppercase, lowercase, digits, and special characters
+    # Return the generated password
+    pass
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
 
-    Args:
-        length (int): The desired length of the password.
-
-    Returns:
-        str: A random strong password.
-    """
 
 # Initialize empty lists to store encrypted passwords, websites, and usernames
 encrypted_passwords = []
