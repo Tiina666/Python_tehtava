@@ -44,11 +44,6 @@ encrypted_passwords = []
 websites = []
 usernames = []
 
-# Initialize empty lists to store encrypted passwords, websites, and usernames
-encrypted_passwords = []
-websites = []
-usernames = []
-
 # Function to add a new password 
 def add_password():
     website = input("Enter the website: ")
