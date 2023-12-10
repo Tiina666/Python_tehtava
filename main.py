@@ -44,17 +44,40 @@ encrypted_passwords = []
 websites = []
 usernames = []
 
+# Initialize empty lists to store encrypted passwords, websites, and usernames
+encrypted_passwords = []
+websites = []
+usernames = []
+
 # Function to add a new password 
 def add_password():
-    """
-    Add a new password to the password manager.
+    website = input("Enter the website: ")
+    username = input("Enter the username: ")
+    try_generate_password = input("Do you want to generate a random strong password? (yes/no): ").lower()
+    
+    if try_generate_password == "yes":
+        password_length = int(input("Enter the desired password length: "))
+        password = generate_password(password_length)
+        print(f"Generated Password: {password}")
+    
+    else:
+        while True:
+            password = input("Enter the password: ")
+            if is_strong_password(password):
+                break
+            else:
+                print("Weak password. Please make it stronger.")
+   
 
-    This function should prompt the user for the website, username,  and password and store them to lits with same index. Optionally, it should check password strengh with the function is_strong_password. It may also include an option for the user to
-    generate a random strong password by calling the generate_password function.
+    # Encrypt the password before storing
+    encrypted_password = caesar_encrypt(password, shift=3)
+    
+    # Add the data to the lists
+    websites.append(website)
+    usernames.append(username)
+    encrypted_passwords.append(encrypted_password)
+    print("Password added successfully!")
 
-    Returns:
-        None
-    """
 
 # Function to retrieve a password 
 def get_password():
