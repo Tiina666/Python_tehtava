@@ -19,7 +19,7 @@ def caesar_encrypt(text, shift):
         else:
             encrypted_text += char
     return encrypted_text
-
+# kommenntti
 def caesar_decrypt(text, shift):
     return caesar_encrypt(text, -shift)
 
