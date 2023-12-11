@@ -83,19 +83,19 @@ def add_password():
     encrypted_passwords.append(encrypted_password)
     print("Password added successfully!")
 
-
 # Function to retrieve a password 
 def get_password():
-    """
-    Retrieve a password for a given website.
+    website = input("Enter the website: ")
 
-    This function should prompt the user for the website name and
-    then display the username and decrypted password for that website.
-
-    Returns:
-        None
-    """
-
+    if website in websites:
+        index = websites.index(website)
+        username = usernames[index]
+        encrypted_password = encrypted_passwords[index]
+        decrypted_password = caesar_decrypt(encrypted_password, shift=3)
+        print(f"Username: {username}\nPassword: {decrypted_password}")
+    else:
+        print("Website not found in the password vault.")
+ 
 # Function to save passwords to a JSON file 
 def save_passwords():
  """
