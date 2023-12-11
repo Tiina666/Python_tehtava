@@ -1,0 +1,14 @@
+Tapaamismuistiinpanot / Python ryhmätyö (Frans, Heini, Tiina, Nina) 
+HUOM. Tekstimuodossa tässä, koska en saanut luotua projektia (Tiina on admin, Ninalla ei oikeuksia)
+
+•	Password Manager Menu/1,2,3 ja 4 näyttäisi toimivan Githubiin lisätyllä testiversiolla. 
+
+•	Epäselvyyttä on vahvojen salasanojen sekä kryptauksen osalta, toiminnot ei toimi tai eivät hyväksy mitään salasanaa. // Kommentti NSt – Huom. rivi 26  # Password strength checker function (optional) Ei toimi, koska koodi on puutteellinen, mutta kohta on optional, eli voidaan ehkä jättää kokonaan pois? 
+// Heini saanut toimimaan vielä illalla, koodi muokattu Githubin testiversioon 0512 klo 22 jälkeen. 
+
+•	Ennen 10.12 palaveria pyritään tutkimaan ja mahdollisesti myös testaamaan toimintoja ja koodien integriteettiä. 10.12.2023 // test.py päästään ajamaan vasta kun muutokset ovat main.py:ssa-
+
+•	Su 10.12 tsekataan Githubin versiohallintatoiminnot kimpassa. Tähän mennessä ehdotetut muutokset ovat main.py:n version sijaan testiversiossa, eli main.py on vielä muokkaamaton. 10.12.2023 // otetaan versionhallinta käyttöön, kaikilla nyt oma branch.
+
+•	Palautuspäivä 13.12. Tämä pitää ilmeisesti myös esittää saman päivän tapaamisessa. 10.12.2023 // Tiina laittaa opettajalle viestin, että osallistumme Zoomin tai Teamsin kautta.
+
