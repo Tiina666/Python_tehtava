@@ -28,7 +28,6 @@ def is_strong_password(password):
     # Implement password strength check logic here
     # For example, you can check for minimum length, presence of uppercase, lowercase, digits, and special characters
     # Return True if the password is strong, False otherwise
-    pass
     return (
         len(password) >= 8 and
         any(char.isupper() for char in password) and
@@ -43,7 +42,6 @@ def generate_password(length):
     # You can use random.choice() to select characters from a pool of characters
     # Make sure to include a mix of uppercase, lowercase, digits, and special characters
     # Return the generated password
-    pass
     characters = string.ascii_letters + string.digits + string.punctuation
     password = ''.join(random.choice(characters) for _ in range(length))
     return password
@@ -143,7 +141,7 @@ def main():
     elif choice == "3":
         save_passwords()
     elif choice == "4":
-        passwords = load_passwords()
+        load_passwords()
         print("Passwords loaded successfully!")
     elif choice == "5":
         break
