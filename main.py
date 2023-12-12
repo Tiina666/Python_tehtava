@@ -141,7 +141,7 @@ def main():
     elif choice == "3":
         save_passwords()
     elif choice == "4":
-        passwords = load_passwords()
+        load_passwords()
         print("Passwords loaded successfully!")
     elif choice == "5":
         break
